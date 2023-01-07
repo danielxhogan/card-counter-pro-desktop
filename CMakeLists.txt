@@ -1,7 +1,7 @@
 ﻿# ./
 
-cmake_minimum_required (VERSION 3.20)
-project (card-counter-pro-desktop VERSION 1.0 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.20)
+project(card-counter-pro-desktop VERSION 1.0 LANGUAGES CXX)
 
 add_library(compiler_flags INTERFACE)
 target_compile_features(compiler_flags INTERFACE cxx_std_20)
@@ -17,7 +17,8 @@ target_compile_options(compiler_flags INTERFACE
 
 set(CMAKE_INSTALL_PREFIX "C:/Program Files/CardCounterPRO")
 configure_file(env.h.in ${PROJECT_BINARY_DIR}/env.h)
-
 file(COPY data/ DESTINATION ${PROJECT_BINARY_DIR}/data)
+
+
 add_subdirectory(data)
-add_subdirectory (src)
+add_subdirectory(src)
