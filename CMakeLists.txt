@@ -22,3 +22,15 @@ file(COPY data/ DESTINATION ${PROJECT_BINARY_DIR}/data)
 
 add_subdirectory(data)
 add_subdirectory(src)
+
+
+add_library(env INTERFACE)
+
+target_sources(env INTERFACE
+	FILE_SET env_header
+	TYPE HEADERS
+	BASE_DIRS ${PROJECT_BINARY_DIR}
+	FILES ${PROJECT_BINARY_DIR}/env.h
+)
+
+install(TARGETS env FILE_SET env_header DESTINATION include)
