@@ -15,6 +15,8 @@ target_compile_options(compiler_flags INTERFACE
 )
 
 
+file(COPY data/ DESTINATION ${PROJECT_BINARY_DIR}/data)
+add_subdirectory(data)
 add_subdirectory (src)
 
 set(CMAKE_INSTALL_PREFIX "C:/Program Files/CardCounterPRO")
