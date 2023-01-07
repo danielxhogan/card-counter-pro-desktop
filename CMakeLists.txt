@@ -21,4 +21,3 @@ configure_file(env.h.in ${PROJECT_BINARY_DIR}/env.h)
 file(COPY data/ DESTINATION ${PROJECT_BINARY_DIR}/data)
 add_subdirectory(data)
 add_subdirectory (src)
-
