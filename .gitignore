@@ -15,3 +15,7 @@ _deps
 out
 build
 .vs
+
+env.ps1
+
+.vscode
