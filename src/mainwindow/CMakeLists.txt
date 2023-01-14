@@ -1,4 +1,4 @@
-# ./src/test
+# ./src/mainwindow
 
 set(SRC
         mainwindow.cpp
