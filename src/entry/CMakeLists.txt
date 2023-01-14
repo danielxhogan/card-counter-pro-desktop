@@ -9,6 +9,9 @@ add_executable(main
 
 target_include_directories(main PRIVATE ${PROJECT_BINARY_DIR})
 
-target_link_libraries(main PRIVATE Qt6::Widgets CardCounterPRO mainwindow)
+target_link_libraries(main
+	PRIVATE Qt6::Widgets
+			mainwindow
+)
 
 install(TARGETS main DESTINATION bin)
