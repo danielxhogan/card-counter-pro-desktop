@@ -1,18 +1,31 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 
 #include <iostream>
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    QWidget(parent)
 {
-    ui->setupUi(this);
+    createTestCombo();
+
+    QGridLayout* layout = new QGridLayout;
+    layout->addWidget(testLabel, 0, 0);
+    layout->addWidget(testCombo, 0, 1);
+
+    setLayout(layout);
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+}
+
+void MainWindow::createTestCombo()
+{
+
+    testCombo = new QComboBox;
+    testCombo->addItem("Hi", 2);
+
+    testLabel = new QLabel(tr("test"));
+    testLabel->setBuddy(testCombo);
 }
 
 void MainWindow::on_actionNew_triggered()

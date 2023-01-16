@@ -1,13 +1,12 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QWidget>
+#include <QGridLayout>
+#include <QLabel>
+#include <QComboBox>
 
-namespace Ui {
-class MainWindow;
-}
-
-class MainWindow : public QMainWindow
+class MainWindow : public QWidget
 {
     Q_OBJECT
 
@@ -20,7 +19,10 @@ private slots:
     void on_actionOpen_triggered();
 
 private:
-    Ui::MainWindow *ui;
+    void createTestCombo();
+
+    QLabel* testLabel;
+    QComboBox* testCombo;
 };
 
 #endif // MAINWINDOW_H
