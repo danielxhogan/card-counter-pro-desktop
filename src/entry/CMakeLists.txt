@@ -1,7 +1,5 @@
 ﻿# ./src/entry
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
-
 add_executable(main
 	main.cpp
 )
