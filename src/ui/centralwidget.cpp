@@ -5,45 +5,29 @@
 #include <QPixmap>
 #include <QString>
 
-CentralWidget::CentralWidget(QWidget* parent) :
-	QWidget(parent)
+CentralWidget::CentralWidget(QWidget* parent) : QWidget(parent)
 {
+	gameBoard = new GameBoard(this);
+	betSelection = new BetSelection(this);
+	playButtons = new PlayButtons(this);
+	instructions = new Instructions(this);
+
 	QPixmap* image = new QPixmap(100, 300);
-
-	// attempts to get image from install dir first
-	// if not found, checks buld dir
 	QString image_dir = INSTALL_IMAGES_DIR;
-	image_dir.append("/cards/02_of_spades.png");
+	image_dir.append("/cards/03_of_spades.png");
 
-	if ( !image->load(image_dir) ) {
+	if (!gameBoard->update_card(image_dir)) {
 		image_dir = BUILD_IMAGES_DIR;
 		image_dir.append("/cards/02_of_spades.png");
-		image->load(image_dir);
+		gameBoard->update_card(image_dir);
+
 	}
 
-	QLabel* image_label = new QLabel;
-	image_label->setPixmap(*image);
-
-
-	create_test_combo();
-	
 	QGridLayout* layout = new QGridLayout;
-	layout->addWidget(test_label, 0, 0);
-	layout->addWidget(test_combo, 0, 1);
-	layout->addWidget(image_label, 0, 3);
+	layout->addWidget(betSelection, 0, 0);
+	layout->addWidget(gameBoard, 0, 1, 1, 3);
+	layout->addWidget(instructions, 0, 4);
+	layout->addWidget(playButtons, 2, 0, 1, 5);
 	
 	setLayout(layout);
-}
-
-CentralWidget::~CentralWidget()
-{
-}
-
-void CentralWidget::create_test_combo()
-{
-	test_combo = new QComboBox;
-	test_combo->addItem("Hi", 2);
-
-	test_label = new QLabel(tr("test"));
-	test_label->setBuddy(test_combo);
 }

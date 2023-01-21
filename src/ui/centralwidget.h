@@ -1,4 +1,8 @@
 #pragma once
+#include "gameboard.h"
+#include "betselection.h"
+#include "playbuttons.h"
+#include "instructions.h"
 
 #include <QWidget>
 #include <QLabel>
@@ -10,13 +14,12 @@ class CentralWidget : public QWidget
 
 public:
 	explicit CentralWidget(QWidget* parent = nullptr);
-	~CentralWidget();
 	
 private slots:
 
 private:
-	void create_test_combo();
-
-	QLabel* test_label;
-	QComboBox* test_combo;
+	GameBoard* gameBoard;
+	BetSelection* betSelection;
+	PlayButtons* playButtons;
+	Instructions* instructions;
 };
