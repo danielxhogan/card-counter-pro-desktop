@@ -1,3 +1,3 @@
-# ./data
+# ./images
 
 add_subdirectory(cards)

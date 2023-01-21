@@ -13,13 +13,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_INSTALL_PREFIX $ENV{INSTALL_PREFIX})
 configure_file(env.h.in ${PROJECT_BINARY_DIR}/env.h)
-file(COPY data/ DESTINATION ${PROJECT_BINARY_DIR}/data)
+file(COPY images/ DESTINATION ${PROJECT_BINARY_DIR}/images)
 
 list(APPEND CMAKE_PREFIX_PATH $ENV{QT_PATH})
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 
-add_subdirectory(data)
+add_subdirectory(images)
 add_subdirectory(src)
 
 
