@@ -15,13 +15,13 @@ CentralWidget::CentralWidget(QWidget* parent) :
 {
 	QPixmap* image = new QPixmap(100, 300);
 	QString image_dir = INSTALL_IMAGES_DIR;
-	image_dir.append("/cards/01_of_spades_A.svg.png");
+	image_dir.append("/cards/02_of_spades.png");
 
 	// attempts to get image from install dir first
 	// if not found, checks buld dir
 	if (!image->load(image_dir)) {
 		image_dir = BUILD_IMAGES_DIR;
-		image_dir.append("/cards/01_of_spades_A.svg.png");
+		image_dir.append("/cards/02_of_spades.png");
 		image->load(image_dir);
 	}
 
