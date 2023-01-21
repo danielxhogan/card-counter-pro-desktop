@@ -7,6 +7,8 @@ set(SRC
 
 add_library(ui ${SRC})
 
+target_include_directories(ui PRIVATE ${PROJECT_BINARY_DIR})
+
 target_link_libraries(ui PRIVATE Qt6::Widgets)
 
 set(HEADER_FILES
