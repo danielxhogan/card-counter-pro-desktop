@@ -1,6 +1,5 @@
 #pragma once
 
-#include <QTextEdit>
 #include <QWidget>
 #include <QLabel>
 #include <QComboBox>
