@@ -12,15 +12,14 @@ CentralWidget::CentralWidget(QWidget* parent) : QWidget(parent)
 	playButtons = new PlayButtons(this);
 	instructions = new Instructions(this);
 
-	QPixmap* image = new QPixmap(100, 300);
+	QPixmap* image = new QPixmap;
 	QString image_dir = INSTALL_IMAGES_DIR;
 	image_dir.append("/cards/03_of_spades.png");
 
-	if (!gameBoard->update_card(image_dir)) {
+	if ( !gameBoard->update_card(image_dir) ) {
 		image_dir = BUILD_IMAGES_DIR;
 		image_dir.append("/cards/02_of_spades.png");
 		gameBoard->update_card(image_dir);
-
 	}
 
 	QGridLayout* layout = new QGridLayout;

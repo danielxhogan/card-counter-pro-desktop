@@ -5,8 +5,6 @@
 #include "instructions.h"
 
 #include <QWidget>
-#include <QLabel>
-#include <QComboBox>
 
 class CentralWidget : public QWidget
 {

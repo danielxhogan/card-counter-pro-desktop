@@ -18,10 +18,9 @@ GameBoard::GameBoard(QWidget* parent) : QWidget(parent)
 bool GameBoard::update_card(QString card_path)
 {
 	QPixmap* card_image = new QPixmap;
-	if (!card_image->load(card_path)) {
+	if ( !card_image->load(card_path) ) {
 		return false;
 	}
 	card_label->setPixmap(*card_image);
 	return true;
-
 }
