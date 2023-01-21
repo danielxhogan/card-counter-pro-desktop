@@ -43,19 +43,19 @@ set(CARDS
 	Queen_of_clubs.png
 	King_of_clubs.png
 
-	01_of_clubs_A.png
-	02_of_clubs.png
-	03_of_clubs.png
-	04_of_clubs.png
-	05_of_clubs.png
-	06_of_clubs.png
-	07_of_clubs.png
-	08_of_clubs.png
-	09_of_clubs.png
-	10_of_clubs.png
-	Jack_of_clubs.png
-	Queen_of_clubs.png
-	King_of_clubs.png
+	01_of_hearts_A.png
+	02_of_hearts.png
+	03_of_hearts.png
+	04_of_hearts.png
+	05_of_hearts.png
+	06_of_hearts.png
+	07_of_hearts.png
+	08_of_hearts.png
+	09_of_hearts.png
+	10_of_hearts.png
+	Jack_of_hearts.png
+	Queen_of_hearts.png
+	King_of_hearts.png
 )
 
 install(FILES ${CARDS} DESTINATION images/cards)
